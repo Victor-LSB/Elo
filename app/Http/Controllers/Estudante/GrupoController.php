@@ -42,7 +42,13 @@ class GrupoController extends Controller
 
         $convidado = User::where('papel', 'estudante')
             ->where(fn ($q) => $q->where('email', $request->identificador)->orWhere('matricula', $request->identificador))
-            ->firstOrFail();
+            ->first();
+
+        if (! $convidado) {
+            return back()->withErrors([
+                'identificador' => 'Nenhum estudante encontrado com esse e-mail ou matrícula.',
+            ]);
+        }
 
         $grupo->membros()->syncWithoutDetaching([$convidado->id]);
 

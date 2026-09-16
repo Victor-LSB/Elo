@@ -11,5 +11,7 @@
       <span class="side-count">{{ $instituicoesPendentes }}</span>
     @endif
   </a>
-  <a href="#" class="side-link"><span class="ico">◔</span> Professores</a>
+  <a href="{{ route('coordenacao.professores.index') }}" class="side-link {{ request()->routeIs('coordenacao.professores.*') ? 'active' : '' }}">
+    <span class="ico">◔</span> Professores
+  </a>
 </nav>

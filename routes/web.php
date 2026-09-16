@@ -5,12 +5,14 @@ use App\Http\Controllers\Admin\ExcecaoController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Coordenacao\InstituicaoController as CoordInstituicaoController;
+use App\Http\Controllers\Coordenacao\ProfessorController as CoordProfessorController;
 use App\Http\Controllers\Coordenacao\TriagemController;
 use App\Http\Controllers\Estudante\DemandaController as EstudanteDemandaController;
 use App\Http\Controllers\Estudante\GrupoController;
 use App\Http\Controllers\Estudante\MilestoneController as EstudanteMilestoneController;
 use App\Http\Controllers\Instituicao\DemandaController as InstDemandaController;
 use App\Http\Controllers\Instituicao\MilestoneController as InstMilestoneController;
+use App\Http\Controllers\Instituicao\PerfilController as InstPerfilController;
 use App\Http\Controllers\NotificacaoController;
 use App\Http\Controllers\Professor\CandidaturaController;
 use App\Http\Controllers\Professor\MilestoneController as ProfMilestoneController;
@@ -58,6 +60,9 @@ Route::middleware(['auth', 'role:instituicao'])->prefix('instituicao')->name('in
     Route::get('/demandas/{demanda}', [InstDemandaController::class, 'show'])->name('demandas.show');
 
     Route::post('/milestones/{milestone}/validar', [InstMilestoneController::class, 'validar'])->name('milestones.validar');
+
+    Route::get('/perfil', [InstPerfilController::class, 'show'])->name('perfil.show');
+    Route::put('/perfil', [InstPerfilController::class, 'update'])->name('perfil.update');
 });
 
 // ---------- Professor (RF-03.3, RF-04, RF-05.3) ----------
@@ -83,6 +88,8 @@ Route::middleware(['auth', 'role:coordenacao'])->prefix('coordenacao')->name('co
     Route::get('/instituicoes', [CoordInstituicaoController::class, 'index'])->name('instituicoes.index');
     Route::post('/instituicoes/{instituicao}/validar', [CoordInstituicaoController::class, 'validar'])->name('instituicoes.validar');
     Route::post('/instituicoes/{instituicao}/recusar', [CoordInstituicaoController::class, 'recusar'])->name('instituicoes.recusar');
+
+    Route::get('/professores', [CoordProfessorController::class, 'index'])->name('professores.index');
 });
 
 // ---------- Admin (RF-01.2, RNF-04, RF-04.4) ----------

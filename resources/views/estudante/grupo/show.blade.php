@@ -81,6 +81,10 @@
         @endforeach
       </div>
 
+      @error('identificador')
+        <div class="alert">{{ $message }}</div>
+      @enderror
+
       <form method="POST" action="{{ route('estudante.grupo.convidar') }}" class="invite-row">
         @csrf
         <input type="text" name="identificador" placeholder="E-mail ou matrícula do colega para convidar" required>

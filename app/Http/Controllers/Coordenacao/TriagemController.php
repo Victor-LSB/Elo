@@ -58,7 +58,7 @@ class TriagemController extends Controller
                 ]
             );
 
-            $demanda->aplicarTriagem($dados, sinalizado: (bool) $dados['substitui_servico_profissional']);
+            $demanda->aplicarTriagem($dados, checklistSinalizado: (bool) $dados['substitui_servico_profissional']);
         });
 
         Auditoria::registrar($demanda->refresh(), $statusAnterior, $demanda->status, $request->user());

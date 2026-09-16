@@ -5,5 +5,7 @@
   <a href="{{ route('instituicao.demandas.create') }}" class="side-link {{ request()->routeIs('instituicao.demandas.create') || request()->routeIs('instituicao.demandas.store') ? 'active' : '' }}">
     <span class="ico">+</span> Nova demanda
   </a>
-  <a href="#" class="side-link"><span class="ico">◔</span> Perfil da instituição</a>
+  <a href="{{ route('instituicao.perfil.show') }}" class="side-link {{ request()->routeIs('instituicao.perfil.*') ? 'active' : '' }}">
+    <span class="ico">◔</span> Perfil da instituição
+  </a>
 </nav>

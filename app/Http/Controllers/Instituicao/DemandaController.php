@@ -42,7 +42,7 @@ class DemandaController extends Controller
         $this->autorizarPropria($demanda, $request);
 
         return view('instituicao.demandas.show', [
-            'demanda' => $demanda->load(['milestones.validacao', 'grupoAtivo.membros', 'checklistEtico']),
+            'demanda' => $demanda->load(['milestones.validacao', 'candidaturaAprovada.grupo.membros', 'checklistEtico']),
         ]);
     }
 

@@ -41,6 +41,36 @@
 @endsection
 
 @section('content')
+  @if ($convitesRecebidos->isNotEmpty())
+    <div class="card" style="border-left: 3px solid var(--accent);">
+      <h2>Convites recebidos</h2>
+      <p class="sub-h">Você precisa aceitar para entrar em um grupo.</p>
+      <div class="group-list">
+        @foreach ($convitesRecebidos as $convite)
+          <div class="group-member" style="align-items:flex-start;">
+            <span class="avatar">{{ collect(explode(' ', $convite->grupo->nome))->take(2)->map(fn ($p) => mb_substr($p, 0, 1))->implode('') }}</span>
+            <div class="member-info" style="flex:1;">
+              <div class="name">Grupo "{{ $convite->grupo->nome }}"</div>
+              <div class="course">
+                Convidado por {{ $convite->convidadoPor->nome }} · membros atuais: {{ $convite->grupo->membros->pluck('nome')->implode(', ') }}
+              </div>
+              <div style="margin-top:8px; display:flex; gap:8px;">
+                <form method="POST" action="{{ route('estudante.convites.aceitar', $convite) }}">
+                  @csrf
+                  <button type="submit" class="btn btn-approve btn-small">Aceitar</button>
+                </form>
+                <form method="POST" action="{{ route('estudante.convites.recusar', $convite) }}">
+                  @csrf
+                  <button type="submit" class="btn btn-reject btn-small">Recusar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        @endforeach
+      </div>
+    </div>
+  @endif
+
   @if (! $grupo)
     <div class="card">
       <h2>Criar um grupo</h2>
@@ -90,6 +120,13 @@
         <input type="text" name="identificador" placeholder="E-mail ou matrícula do colega para convidar" required>
         <button type="submit" class="btn btn-primary">Convidar</button>
       </form>
+
+      @if ($convitesEnviados->isNotEmpty())
+        <div class="status-banner">
+          <strong>Convites aguardando resposta:</strong>
+          {{ $convitesEnviados->map(fn ($c) => $c->estudante->nome)->implode(', ') }}
+        </div>
+      @endif
 
       @if ($demandaAtiva)
         <div class="status-banner">

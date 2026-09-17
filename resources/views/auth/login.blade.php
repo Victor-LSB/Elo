@@ -42,7 +42,7 @@
           <input type="checkbox" name="lembrar" value="1">
           Lembrar de mim
         </label>
-        <a href="#" class="link-accent">Esqueci minha senha</a>
+        <a href="{{ route('password.request') }}" class="link-accent">Esqueci minha senha</a>
       </div>
       <button type="submit" class="btn btn-primary">Entrar</button>
     </form>

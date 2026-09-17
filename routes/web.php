@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\ConfiguracaoController;
+use App\Http\Controllers\Admin\DemandaController as AdminDemandaController;
 use App\Http\Controllers\Admin\ExcecaoController;
+use App\Http\Controllers\Admin\UsuarioController as AdminUsuarioController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Coordenacao\InstituicaoController as CoordInstituicaoController;
 use App\Http\Controllers\Coordenacao\ProfessorController as CoordProfessorController;
@@ -23,6 +26,11 @@ Route::view('/', 'landing')->name('landing');
 Route::view('/login', 'auth.login')->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('login.store');
 Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
+
+Route::get('/esqueci-senha', [PasswordResetController::class, 'requestForm'])->name('password.request');
+Route::post('/esqueci-senha', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
+Route::get('/redefinir-senha/{token}', [PasswordResetController::class, 'resetForm'])->name('password.reset');
+Route::post('/redefinir-senha', [PasswordResetController::class, 'reset'])->name('password.update');
 
 // ---------- Notificações (RF-07.1) — comuns a todos os papéis ----------
 Route::middleware('auth')->group(function () {
@@ -47,6 +55,8 @@ Route::middleware(['auth', 'role:estudante'])->prefix('estudante')->name('estuda
     Route::post('/grupo', [GrupoController::class, 'store'])->name('grupo.store');
     Route::post('/grupo/convidar', [GrupoController::class, 'convidar'])->name('grupo.convidar');
     Route::delete('/grupo/saida', [GrupoController::class, 'saidaDoGrupo'])->name('grupo.sair');
+    Route::post('/convites/{convite}/aceitar', [GrupoController::class, 'aceitarConvite'])->name('convites.aceitar');
+    Route::post('/convites/{convite}/recusar', [GrupoController::class, 'recusarConvite'])->name('convites.recusar');
 
     Route::get('/horas', [EstudanteMilestoneController::class, 'index'])->name('horas.index');
     Route::post('/milestones/{milestone}/entrega', [EstudanteMilestoneController::class, 'registrarEntrega'])->name('milestones.entrega');
@@ -68,6 +78,7 @@ Route::middleware(['auth', 'role:instituicao'])->prefix('instituicao')->name('in
 // ---------- Professor (RF-03.3, RF-04, RF-05.3) ----------
 Route::middleware(['auth', 'role:professor'])->prefix('professor')->name('professor.')->group(function () {
     Route::get('/demandas', [CandidaturaController::class, 'index'])->name('demandas.index');
+    Route::get('/candidaturas', [CandidaturaController::class, 'candidaturas'])->name('candidaturas.index');
     Route::get('/demandas/{demanda}/candidaturas', [CandidaturaController::class, 'show'])->name('candidaturas.show');
     Route::post('/candidaturas/{candidatura}/aprovar', [CandidaturaController::class, 'aprovar'])->name('candidaturas.aprovar');
     Route::post('/candidaturas/{candidatura}/rejeitar', [CandidaturaController::class, 'rejeitar'])->name('candidaturas.rejeitar');
@@ -101,4 +112,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/configuracoes', [ConfiguracaoController::class, 'index'])->name('configuracoes.index');
     Route::put('/configuracoes', [ConfiguracaoController::class, 'atualizar'])->name('configuracoes.atualizar');
     Route::post('/usuarios', [ConfiguracaoController::class, 'criarUsuario'])->name('usuarios.store');
+    Route::get('/usuarios', [AdminUsuarioController::class, 'index'])->name('usuarios.index');
+
+    Route::get('/demandas', [AdminDemandaController::class, 'index'])->name('demandas.index');
 });

@@ -22,6 +22,33 @@ class CandidaturaController extends Controller
         return view('professor.demandas.index', ['demandas' => $demandas]);
     }
 
+    /** Página central de candidaturas: todas as pendentes do professor, de todas as demandas. */
+    public function candidaturas(Request $request)
+    {
+        $demandas = $request->user()->demandasComoProfessor()
+            ->with(['candidaturas' => function ($q) {
+                $q->with('grupo.membros')->latest();
+            }, 'instituicao'])
+            ->get();
+
+        $pendentes = $demandas->flatMap(fn ($d) => $d->candidaturas->where('status', 'pendente')->map(function ($c) use ($d) {
+            $c->setRelation('demanda', $d);
+
+            return $c;
+        }));
+
+        $recentes = $demandas->flatMap(fn ($d) => $d->candidaturas->whereIn('status', ['aprovada', 'rejeitada', 'rejeitada_automatica'])->map(function ($c) use ($d) {
+            $c->setRelation('demanda', $d);
+
+            return $c;
+        }))->sortByDesc('data_resposta')->take(10);
+
+        return view('professor.candidaturas.index', [
+            'pendentes' => $pendentes,
+            'recentes' => $recentes,
+        ]);
+    }
+
     public function show(Demanda $demanda, Request $request)
     {
         $this->autorizarPropria($demanda, $request);

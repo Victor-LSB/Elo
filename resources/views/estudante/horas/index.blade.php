@@ -31,7 +31,10 @@
   .upload-row input[type=file]{ font-size: 13px; font-family: inherit; }
 
   .cert-list{ display: flex; flex-direction: column; gap: 12px; }
-  .cert-card{
+  .status-banner{
+    padding: 14px 16px; background: var(--surface-alt); border-left: 3px solid var(--support);
+    border-radius: 2px; font-size: 13.5px; color: var(--ink-soft);
+  }  .cert-card{
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card);
     padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
   }
@@ -63,7 +66,12 @@
       <h2>{{ $demanda->titulo }}</h2>
       <p class="sub-h">{{ $demanda->instituicao->nome }} · Nível {{ $demanda->nivel_complexidade }}</p>
 
-      @foreach ($demanda->milestones as $milestone)
+      @if ($candidaturaAtiva && $candidaturaAtiva->status === 'pendente')
+        <div class="status-banner" style="margin-top:14px;">
+          Candidatura enviada {{ $candidaturaAtiva->created_at->diffForHumans() }}. Aguardando resposta do professor responsável — assim que for aprovada, os milestones aparecem aqui.
+        </div>
+      @else
+        @foreach ($demanda->milestones as $milestone)
         <div class="milestone {{ $milestone->status === 'concluido' ? 'done' : ($milestone->status === 'em_risco' ? 'risk' : '') }}">
           <div class="milestone-top">
             <h3>{{ $milestone->ordem }}. {{ $milestone->titulo }}</h3>
@@ -105,7 +113,8 @@
             </form>
           @endif
         </div>
-      @endforeach
+        @endforeach
+      @endif
     </div>
   @else
     <div class="empty">Você não tem nenhuma demanda em andamento no momento.</div>

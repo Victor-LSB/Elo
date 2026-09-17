@@ -8,6 +8,10 @@
   <a href="{{ route('admin.configuracoes.index') }}" class="side-link {{ request()->routeIs('admin.configuracoes.*') ? 'active' : '' }}">
     <span class="ico">⚙</span> Configurações
   </a>
-  <a href="#" class="side-link"><span class="ico">◈</span> Usuários</a>
-  <a href="#" class="side-link"><span class="ico">◔</span> Todas as demandas</a>
+  <a href="{{ route('admin.usuarios.index') }}" class="side-link {{ request()->routeIs('admin.usuarios.*') ? 'active' : '' }}">
+    <span class="ico">◈</span> Usuários
+  </a>
+  <a href="{{ route('admin.demandas.index') }}" class="side-link {{ request()->routeIs('admin.demandas.*') ? 'active' : '' }}">
+    <span class="ico">◔</span> Todas as demandas
+  </a>
 </nav>

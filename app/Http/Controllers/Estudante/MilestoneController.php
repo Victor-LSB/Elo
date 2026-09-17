@@ -13,8 +13,13 @@ class MilestoneController extends Controller
         $grupo = $request->user()->grupos()->first();
         $demanda = $grupo?->demandaAtiva();
 
+        $candidaturaAtiva = ($grupo && $demanda)
+            ? $demanda->candidaturas()->where('grupo_id', $grupo->id)->latest()->first()
+            : null;
+
         return view('estudante.horas.index', [
             'demanda' => $demanda?->load('milestones.validacao'),
+            'candidaturaAtiva' => $candidaturaAtiva,
             'certificados' => $request->user()->certificados()->with('demanda')->get(),
         ]);
     }

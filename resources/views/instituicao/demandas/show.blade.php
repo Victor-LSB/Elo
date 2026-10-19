@@ -122,7 +122,7 @@
                     </form>
                   @endunless
                   @if ($milestone->entrega_path)
-                    <a href="{{ Storage::url($milestone->entrega_path) }}" class="btn btn-outline btn-small">Ver relatório anexado</a>
+                    <a href="{{ route('milestones.entrega', $milestone) }}" class="btn btn-outline btn-small" target="_blank">Ver relatório anexado</a>
                   @endif
                 </div>
               @endif

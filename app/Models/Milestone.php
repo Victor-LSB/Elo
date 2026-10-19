@@ -70,10 +70,18 @@ class Milestone extends Model
         return $v->professor_aprovou || $v->instituicao_aprovou;
     }
 
-    /** Credita as horas ao grupo ativo e marca o milestone como concluído. */
+    /** Credita as horas ao grupo ativo, marca o milestone como concluído e libera o próximo. */
     public function concluirECreditarHoras(): void
     {
         $this->update(['status' => 'concluido', 'data_conclusao' => now()]);
+
+        $proximo = $this->demanda->milestones()
+            ->where('ordem', $this->ordem + 1)
+            ->where('status', 'nao_iniciado')
+            ->first();
+
+        $proximo?->update(['status' => 'em_andamento']);
+
         $this->demanda->verificarConclusaoEEmitirCertificados();
     }
 }

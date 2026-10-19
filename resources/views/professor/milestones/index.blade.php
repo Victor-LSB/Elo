@@ -83,7 +83,7 @@
 
       @if ($milestone->entrega_path)
         <div class="deliverable">
-          📎 <a href="{{ Storage::url($milestone->entrega_path) }}">Ver entrega anexada pelo grupo</a>
+          📎 <a href="{{ route('milestones.entrega', $milestone) }}" target="_blank">Ver entrega anexada pelo grupo</a>
         </div>
       @endif
 

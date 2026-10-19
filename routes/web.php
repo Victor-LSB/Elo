@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Coordenacao\InstituicaoController as CoordInstituicaoController;
 use App\Http\Controllers\Coordenacao\ProfessorController as CoordProfessorController;
 use App\Http\Controllers\Coordenacao\TriagemController;
+use App\Http\Controllers\EntregaController;
 use App\Http\Controllers\Estudante\DemandaController as EstudanteDemandaController;
 use App\Http\Controllers\Estudante\GrupoController;
 use App\Http\Controllers\Estudante\MilestoneController as EstudanteMilestoneController;
@@ -36,6 +37,10 @@ Route::post('/redefinir-senha', [PasswordResetController::class, 'reset'])->name
 Route::middleware('auth')->group(function () {
     Route::get('/notificacoes/{id}', [NotificacaoController::class, 'abrir'])->name('notificacoes.abrir');
     Route::post('/notificacoes/lidas', [NotificacaoController::class, 'marcarTodasLidas'])->name('notificacoes.lidas');
+
+    // Arquivo de entrega de um milestone — acesso restrito checado no controller
+    // (professor da demanda, instituição dona, membro do grupo ou admin/coordenação).
+    Route::get('/milestones/{milestone}/entrega', [EntregaController::class, 'show'])->name('milestones.entrega');
 });
 
 Route::view('/cadastro', 'auth.cadastro')->name('cadastro');

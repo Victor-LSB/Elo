@@ -10,7 +10,9 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Coordenacao\InstituicaoController as CoordInstituicaoController;
 use App\Http\Controllers\Coordenacao\ProfessorController as CoordProfessorController;
 use App\Http\Controllers\Coordenacao\TriagemController;
+use App\Http\Controllers\CertificadoVerificacaoController;
 use App\Http\Controllers\EntregaController;
+use App\Http\Controllers\Estudante\CertificadoController;
 use App\Http\Controllers\Estudante\DemandaController as EstudanteDemandaController;
 use App\Http\Controllers\Estudante\GrupoController;
 use App\Http\Controllers\Estudante\MilestoneController as EstudanteMilestoneController;
@@ -43,6 +45,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/milestones/{milestone}/entrega', [EntregaController::class, 'show'])->name('milestones.entrega');
 });
 
+// Verificação pública de autenticidade (qualquer pessoa com o código, ex.: quem recebeu o certificado)
+Route::get('/certificados/verificar/{codigo}', [CertificadoVerificacaoController::class, 'show'])->name('certificados.verificar');
+
 Route::view('/cadastro', 'auth.cadastro')->name('cadastro');
 Route::view('/cadastro/estudante', 'auth.cadastro-estudante')->name('cadastro.estudante.form');
 Route::post('/cadastro/estudante', [RegisterController::class, 'estudante'])->name('cadastro.estudante');
@@ -65,6 +70,8 @@ Route::middleware(['auth', 'role:estudante'])->prefix('estudante')->name('estuda
 
     Route::get('/horas', [EstudanteMilestoneController::class, 'index'])->name('horas.index');
     Route::post('/milestones/{milestone}/entrega', [EstudanteMilestoneController::class, 'registrarEntrega'])->name('milestones.entrega');
+
+    Route::get('/certificados/{certificado}/pdf', [CertificadoController::class, 'pdf'])->name('certificados.pdf');
 });
 
 // ---------- Instituição (RF-02, RF-05.3) ----------

@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('titulo', 'Cadastre-se — Elo')
+@section('titulo', 'Cadastre-se — ConectaExtensão')
 
 @push('estilos')
 <style>
@@ -30,12 +30,12 @@
 
 @section('body')
 <div class="top centered">
-  <a href="{{ route('landing') }}" class="logo">Elo</a>
+  <a href="{{ route('landing') }}" class="logo">ConectaExtensão</a>
 </div>
 
 <div class="shell">
   <div class="head">
-    <h1>Como você vai usar a Elo?</h1>
+    <h1>Como você vai usar o ConectaExtensão?</h1>
     <p>Essa escolha define suas permissões na plataforma e não pode ser alterada depois do cadastro.</p>
   </div>
 

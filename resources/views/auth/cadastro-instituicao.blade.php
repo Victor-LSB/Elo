@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('titulo', 'Cadastro de instituição — Elo')
+@section('titulo', 'Cadastro de instituição — ConectaExtensão')
 
 @push('estilos')
 <style>
@@ -10,7 +10,7 @@
 
 @section('body')
 <div class="top">
-  <a href="{{ route('landing') }}" class="logo">Elo</a>
+  <a href="{{ route('landing') }}" class="logo">ConectaExtensão</a>
   <a href="{{ route('cadastro') }}" class="back">← Trocar papel</a>
 </div>
 
@@ -80,7 +80,7 @@
 
       <label class="checkbox-line" style="margin-top:22px;">
         <input type="checkbox" required>
-        <span>Li e concordo com os <a href="#" class="link-accent">Termos de uso</a> e a <a href="#" class="link-accent">Política de privacidade</a> da Elo.</span>
+        <span>Li e concordo com os <a href="#" class="link-accent">Termos de uso</a> e a <a href="#" class="link-accent">Política de privacidade</a> do ConectaExtensão.</span>
       </label>
 
       <div class="note">

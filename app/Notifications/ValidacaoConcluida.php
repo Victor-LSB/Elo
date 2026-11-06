@@ -10,7 +10,7 @@ use App\Models\Milestone;
  * passam a contar para o grupo. Também é usada para avisar a contraparte de
  * que falta a aprovação dela.
  */
-class ValidacaoConcluida extends NotificacaoElo
+class ValidacaoConcluida extends NotificacaoConectaExtensao
 {
     public function __construct(
         public Milestone $milestone,

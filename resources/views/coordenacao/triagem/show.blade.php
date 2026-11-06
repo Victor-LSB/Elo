@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('titulo', 'Triagem — Elo')
+@section('titulo', 'Triagem — ConectaExtensão')
 @section('sidebar-role', 'Coordenação de extensão')
 @section('sidebar-nav')
   @include('partials.sidebar.coordenacao')

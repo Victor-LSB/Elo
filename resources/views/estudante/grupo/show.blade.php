@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('titulo', 'Meu grupo — Elo')
+@section('titulo', 'Meu grupo — ConectaExtensão')
 @section('sidebar-role', auth()->user()->curso)
 @section('sidebar-nav')
   @include('partials.sidebar.estudante')

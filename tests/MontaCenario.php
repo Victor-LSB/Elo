@@ -26,7 +26,7 @@ trait MontaCenario
     {
         return User::create([
             'nome' => 'Prof. Teste',
-            'email' => 'prof'.uniqid().'@elo.test',
+            'email' => 'prof'.uniqid().'@conectaextensao.test',
             'password' => Hash::make('password'),
             'papel' => 'professor',
             'departamento_id' => ($departamento ?? $this->criarDepartamento())->id,
@@ -39,7 +39,7 @@ trait MontaCenario
             'nome' => 'ONG Teste',
             'tipo' => 'ong',
             'responsavel' => 'Responsável Teste',
-            'contato_email' => 'ong'.uniqid().'@elo.test',
+            'contato_email' => 'ong'.uniqid().'@conectaextensao.test',
             'status' => $status,
         ]);
 
@@ -58,7 +58,7 @@ trait MontaCenario
     {
         return User::create([
             'nome' => $nome,
-            'email' => 'est'.uniqid().'@elo.test',
+            'email' => 'est'.uniqid().'@conectaextensao.test',
             'password' => Hash::make('password'),
             'papel' => 'estudante',
             'curso' => 'Sistemas para Internet',

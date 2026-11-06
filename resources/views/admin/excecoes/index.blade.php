@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
-@section('titulo', 'Exceções — Elo')
-@section('sidebar-role', 'Elo · Administração')
+@section('titulo', 'Exceções — ConectaExtensão')
+@section('sidebar-role', 'Administração')
 @section('sidebar-nav')
   @include('partials.sidebar.admin')
 @endsection

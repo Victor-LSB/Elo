@@ -91,7 +91,7 @@ class CentralNotificacoesTest extends TestCase
     {
         $coordenacao = User::create([
             'nome' => 'Coordenação',
-            'email' => 'coord-sidebar@elo.test',
+            'email' => 'coord-sidebar@conectaextensao.test',
             'password' => Hash::make('password'),
             'papel' => 'coordenacao',
         ]);
@@ -109,7 +109,7 @@ class CentralNotificacoesTest extends TestCase
     {
         $admin = User::create([
             'nome' => 'Admin',
-            'email' => 'admin-sidebar@elo.test',
+            'email' => 'admin-sidebar@conectaextensao.test',
             'password' => Hash::make('password'),
             'papel' => 'admin',
         ]);

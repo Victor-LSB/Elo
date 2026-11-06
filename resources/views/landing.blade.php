@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elo — Extensão universitária que chega ao bairro</title>
+<title>ConectaExtensão — Extensão universitária que chega ao bairro</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -462,7 +462,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="{{ route('landing') }}" class="logo">Elo</a>
+    <a href="{{ route('landing') }}" class="logo">ConectaExtensão</a>
     <nav>
       <ul class="nav-links" id="navLinks">
         <li><a href="#como-funciona">Como funciona</a></li>
@@ -484,7 +484,7 @@
     <div class="wrap hero-grid">
       <div>
         <h1>Uma ONG precisa de um sistema. Um grupo de estudantes sabe construir um.</h1>
-        <p class="lede">A Elo liga demandas reais de instituições parceiras — ONGs, escolas públicas, associações de bairro — a estudantes de todos os cursos, em troca de horas complementares.</p>
+        <p class="lede">O ConectaExtensão liga demandas reais de instituições parceiras — ONGs, escolas públicas, associações de bairro — a estudantes de todos os cursos, em troca de horas complementares.</p>
         <div class="hero-actions">
           <a href="{{ route('cadastro.instituicao.form') }}" class="btn btn-primary">Sou uma instituição parceira</a>
           <a href="{{ route('cadastro.estudante.form') }}" class="btn btn-outline">Sou estudante</a>
@@ -641,7 +641,7 @@
 <footer>
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <a href="{{ route('landing') }}" class="logo">Elo</a>
+      <a href="{{ route('landing') }}" class="logo">ConectaExtensão</a>
       <p>Extensão universitária que chega ao bairro — demandas reais, resolvidas por quem está aprendendo a resolver.</p>
     </div>
     <div class="footer-col">
@@ -662,7 +662,7 @@
     </div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2026 Elo. Extensão universitária.</span>
+    <span>© 2026 ConectaExtensão. Extensão universitária.</span>
     <span>Compatível com a infraestrutura institucional da UNIVALI.</span>
   </div>
 </footer>

@@ -5,7 +5,7 @@ namespace App\Notifications;
 use App\Models\ConviteGrupo;
 
 /** Avisa o estudante que ele recebeu um convite para entrar num grupo. */
-class ConviteGrupoRecebido extends NotificacaoElo
+class ConviteGrupoRecebido extends NotificacaoConectaExtensao
 {
     public function __construct(public ConviteGrupo $convite)
     {

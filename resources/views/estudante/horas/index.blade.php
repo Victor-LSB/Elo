@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('titulo', 'Minhas horas — Elo')
+@section('titulo', 'Minhas horas — ConectaExtensão')
 @section('sidebar-role', auth()->user()->curso)
 @section('sidebar-nav')
   @include('partials.sidebar.estudante')
@@ -130,11 +130,10 @@
             <span>{{ $certificado->demanda->instituicao->nome }}</span>
             <span class="cert-hours">{{ $certificado->horas_totais }}h</span>
             <span>Emitido em {{ $certificado->data_emissao->format('d/m/Y') }}</span>
+            <span>Código {{ $certificado->codigo }}</span>
           </div>
         </div>
-        @if ($certificado->pdf_path)
-          <a href="{{ Storage::url($certificado->pdf_path) }}" class="btn btn-outline btn-small">↓ Baixar PDF</a>
-        @endif
+        <a href="{{ route('estudante.certificados.pdf', $certificado) }}" class="btn btn-outline btn-small">Baixar certificado (PDF)</a>
       </div>
     @empty
       <div class="empty">Nenhum certificado emitido ainda.</div>

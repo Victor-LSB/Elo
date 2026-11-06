@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('titulo', 'Instituições — Elo')
+@section('titulo', 'Instituições — ConectaExtensão')
 @section('sidebar-role', 'Coordenação de extensão')
 @section('sidebar-nav')
   @include('partials.sidebar.coordenacao')

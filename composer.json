@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "univali/elo",
+    "name": "univali/conectaextensao",
     "type": "project",
-    "description": "Elo — Plataforma Integradora de Projetos de Extensão",
+    "description": "ConectaExtensao — Plataforma Integradora de Projetos de Extensão",
     "keywords": ["laravel", "extensao", "univali"],
     "license": "MIT",
     "require": {

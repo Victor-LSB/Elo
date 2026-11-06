@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('titulo', 'Cadastro enviado — Elo')
+@section('titulo', 'Cadastro enviado — ConectaExtensão')
 
 @push('estilos')
 <style>
@@ -29,7 +29,7 @@
 
 @section('body')
 <div class="top centered">
-  <a href="{{ route('landing') }}" class="logo">Elo</a>
+  <a href="{{ route('landing') }}" class="logo">ConectaExtensão</a>
 </div>
 
 <div class="shell">

@@ -9,7 +9,7 @@ use App\Models\Demanda;
  * conclui a triagem — seja abrindo a demanda para candidatura, seja
  * sinalizando-a para revisão adicional pelo checklist ético (RF-06.2).
  */
-class DemandaTriada extends NotificacaoElo
+class DemandaTriada extends NotificacaoConectaExtensao
 {
     public function __construct(public Demanda $demanda)
     {

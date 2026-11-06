@@ -24,7 +24,7 @@
     display: flex; flex-direction: column; padding: 24px 0;
     position: sticky; top: 0; height: 100vh;
   }
-  .sidebar .logo{ font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 22px; color: #fff; padding: 4px 22px 20px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.14); letter-spacing: 0.02em; }
+  .sidebar .logo{ font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 19px; color: #fff; padding: 4px 22px 20px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.14); letter-spacing: 0.02em; }
   .side-nav{ display: flex; flex-direction: column; gap: 4px; flex: 1; }
   .side-link{ display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-radius: 0; font-size: 14.5px; font-weight: 600; color: #C5D0DF; }
   .side-link .ico{ width: 18px; text-align: center; }

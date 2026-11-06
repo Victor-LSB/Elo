@@ -8,7 +8,7 @@ use App\Models\Candidatura;
  * RF-07.1: avisa o professor responsável de que um grupo se candidatou à
  * demanda dele e aguarda aprovação ou rejeição (RF-03.3).
  */
-class NovaCandidatura extends NotificacaoElo
+class NovaCandidatura extends NotificacaoConectaExtensao
 {
     public function __construct(public Candidatura $candidatura)
     {

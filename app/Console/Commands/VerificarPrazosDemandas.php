@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Notification;
 
 class VerificarPrazosDemandas extends Command
 {
-    protected $signature = 'elo:verificar-prazos';
+    protected $signature = 'conectaextensao:verificar-prazos';
 
     protected $description = 'RF-04.3/04.4 e RNF-04: marca milestones vencidos como "em risco", '
         .'notifica orientador/admin após o período adicional, e sinaliza demandas '

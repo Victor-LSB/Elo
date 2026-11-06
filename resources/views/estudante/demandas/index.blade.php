@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('titulo', 'Demandas abertas — Elo')
+@section('titulo', 'Demandas abertas — ConectaExtensão')
 @section('sidebar-role', auth()->user()->curso)
 @section('sidebar-nav')
   @include('partials.sidebar.estudante')

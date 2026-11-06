@@ -26,21 +26,21 @@ class DatabaseSeeder extends Seeder
 
         // ---------- Usuários base ----------
         $admin = User::create([
-            'nome' => 'Admin', 'email' => 'admin@elo.test',
+            'nome' => 'Admin', 'email' => 'admin@conectaextensao.test',
             'password' => Hash::make('password'), 'papel' => 'admin',
         ]);
 
         $coordenacao = User::create([
-            'nome' => 'Coordenação de Extensão', 'email' => 'coordenacao@elo.test',
+            'nome' => 'Coordenação de Extensão', 'email' => 'coordenacao@conectaextensao.test',
             'password' => Hash::make('password'), 'papel' => 'coordenacao',
         ]);
 
         $marcos = User::create([
-            'nome' => 'Prof. Marcos Vinícius', 'email' => 'marcos@elo.test',
+            'nome' => 'Prof. Marcos Vinícius', 'email' => 'marcos@conectaextensao.test',
             'password' => Hash::make('password'), 'papel' => 'professor', 'departamento_id' => $computacao->id,
         ]);
         User::create([
-            'nome' => 'Profa. Ana Tereza Lopes', 'email' => 'ana.tereza@elo.test',
+            'nome' => 'Profa. Ana Tereza Lopes', 'email' => 'ana.tereza@conectaextensao.test',
             'password' => Hash::make('password'), 'papel' => 'professor', 'departamento_id' => $design->id,
         ]);
 
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
             'status' => 'ativa',
         ]);
         $girassolUser = User::create([
-            'nome' => 'Marina Duarte', 'email' => 'girassol@elo.test',
+            'nome' => 'Marina Duarte', 'email' => 'girassol@conectaextensao.test',
             'password' => Hash::make('password'), 'papel' => 'instituicao', 'instituicao_id' => $girassol->id,
         ]);
 
@@ -64,25 +64,25 @@ class DatabaseSeeder extends Seeder
             'status' => 'pendente',
         ]);
         User::create([
-            'nome' => 'Fernanda Rocha', 'email' => 'bancosolidario@elo.test',
+            'nome' => 'Fernanda Rocha', 'email' => 'bancosolidario@conectaextensao.test',
             'password' => Hash::make('password'), 'papel' => 'instituicao', 'instituicao_id' => $bancoAlimentos->id,
         ]);
 
         // ---------- Estudantes e grupo "Vetor4" ----------
         $larissa = User::create([
-            'nome' => 'Larissa Costa', 'email' => 'larissa@elo.test', 'password' => Hash::make('password'),
+            'nome' => 'Larissa Costa', 'email' => 'larissa@conectaextensao.test', 'password' => Hash::make('password'),
             'papel' => 'estudante', 'curso' => 'Sistemas para Internet', 'matricula' => '2023001',
         ]);
         $bruno = User::create([
-            'nome' => 'Bruno Ferreira', 'email' => 'bruno@elo.test', 'password' => Hash::make('password'),
+            'nome' => 'Bruno Ferreira', 'email' => 'bruno@conectaextensao.test', 'password' => Hash::make('password'),
             'papel' => 'estudante', 'curso' => 'Ciência da Computação', 'matricula' => '2023002',
         ]);
         $julia = User::create([
-            'nome' => 'Julia Andrade', 'email' => 'julia@elo.test', 'password' => Hash::make('password'),
+            'nome' => 'Julia Andrade', 'email' => 'julia@conectaextensao.test', 'password' => Hash::make('password'),
             'papel' => 'estudante', 'curso' => 'Design', 'matricula' => '2023003',
         ]);
         $rafael = User::create([
-            'nome' => 'Rafael Pinto', 'email' => 'rafael@elo.test', 'password' => Hash::make('password'),
+            'nome' => 'Rafael Pinto', 'email' => 'rafael@conectaextensao.test', 'password' => Hash::make('password'),
             'papel' => 'estudante', 'curso' => 'Sistemas para Internet', 'matricula' => '2023004',
         ]);
 

@@ -18,7 +18,7 @@ class SmokeReportedBugsRound2Test extends TestCase
     {
         return User::create([
             'nome' => 'Admin Teste',
-            'email' => 'admin'.uniqid().'@elo.test',
+            'email' => 'admin'.uniqid().'@conectaextensao.test',
             'password' => Hash::make('password'),
             'papel' => 'admin',
         ]);
@@ -43,7 +43,7 @@ class SmokeReportedBugsRound2Test extends TestCase
     public function test_erro1_fluxo_completo_de_redefinicao_de_senha(): void
     {
         $user = User::create([
-            'nome' => 'Fulano', 'email' => 'fulano'.uniqid().'@elo.test',
+            'nome' => 'Fulano', 'email' => 'fulano'.uniqid().'@conectaextensao.test',
             'password' => Hash::make('senhaAntiga'), 'papel' => 'estudante',
         ]);
 

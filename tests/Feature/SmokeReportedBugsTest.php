@@ -19,7 +19,7 @@ class SmokeReportedBugsTest extends TestCase
     {
         return User::create([
             'nome' => 'Coord Teste',
-            'email' => 'coord'.uniqid().'@elo.test',
+            'email' => 'coord'.uniqid().'@conectaextensao.test',
             'password' => Hash::make('password'),
             'papel' => 'coordenacao',
         ]);

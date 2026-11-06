@@ -10,7 +10,7 @@ use App\Models\Demanda;
  * de "parada há X dias"), mas a coordenação e a instituição são avisadas
  * para poderem reavaliar escopo, nível ou divulgação.
  */
-class DemandaParada extends NotificacaoElo
+class DemandaParada extends NotificacaoConectaExtensao
 {
     public function __construct(public Demanda $demanda)
     {

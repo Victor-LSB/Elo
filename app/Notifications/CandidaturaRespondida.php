@@ -9,7 +9,7 @@ use App\Models\Candidatura;
  * candidatura — aprovada, rejeitada ou rejeitada automaticamente porque
  * outro grupo foi aprovado para a mesma demanda.
  */
-class CandidaturaRespondida extends NotificacaoElo
+class CandidaturaRespondida extends NotificacaoConectaExtensao
 {
     public function __construct(public Candidatura $candidatura)
     {

@@ -5,7 +5,7 @@ namespace App\Notifications;
 use App\Models\ConviteGrupo;
 
 /** Avisa quem convidou que o convite foi aceito ou recusado. */
-class ConviteGrupoRespondido extends NotificacaoElo
+class ConviteGrupoRespondido extends NotificacaoConectaExtensao
 {
     public function __construct(public ConviteGrupo $convite)
     {

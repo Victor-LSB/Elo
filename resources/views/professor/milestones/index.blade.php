@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('titulo', 'Milestones — Elo')
+@section('titulo', 'Milestones — ConectaExtensão')
 @section('sidebar-role', auth()->user()->departamento?->nome ? 'Departamento de '.auth()->user()->departamento->nome : 'Professor orientador')
 @section('sidebar-nav')
   @include('partials.sidebar.professor')

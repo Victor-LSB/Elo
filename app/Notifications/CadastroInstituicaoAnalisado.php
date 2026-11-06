@@ -8,7 +8,7 @@ use App\Models\Instituicao;
  * RF-01.1 + RF-07.1: avisa a instituição de que a coordenação analisou seu
  * cadastro, liberando (ou não) o acesso à plataforma.
  */
-class CadastroInstituicaoAnalisado extends NotificacaoElo
+class CadastroInstituicaoAnalisado extends NotificacaoConectaExtensao
 {
     public function __construct(public Instituicao $instituicao)
     {

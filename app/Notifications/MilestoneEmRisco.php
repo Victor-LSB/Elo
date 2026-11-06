@@ -10,7 +10,7 @@ use App\Models\Milestone;
  * professor orientador e — quando o risco se prolonga — para o admin,
  * que é quem decide sobre a reabertura.
  */
-class MilestoneEmRisco extends NotificacaoElo
+class MilestoneEmRisco extends NotificacaoConectaExtensao
 {
     public function __construct(
         public Milestone $milestone,

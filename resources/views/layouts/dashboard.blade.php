@@ -6,7 +6,7 @@
 <title>@yield('titulo', 'Elo')</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 @include('partials.dashboard-styles')
 @stack('estilos')
 </head>
@@ -34,7 +34,7 @@
 
       <div class="sino-wrap">
         <button type="button" class="sino" id="sinoBtn" aria-label="Notificações" aria-expanded="false">
-          <span aria-hidden="true">🔔</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
           @if (($totalNaoLidas ?? 0) > 0)
             <span class="sino-badge">{{ $totalNaoLidas > 9 ? '9+' : $totalNaoLidas }}</span>
           @endif

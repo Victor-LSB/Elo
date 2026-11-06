@@ -17,7 +17,7 @@
   .level-pick{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 6px; }
   .level-opt{ border: 1.5px solid var(--border); border-radius: 3px; padding: 12px 10px; cursor: pointer; display: block; }
   .level-opt input{ display: none; }
-  .level-opt.active{ border-color: var(--support); background: #E1EADB; }
+  .level-opt.active{ border-color: var(--support); background: #E3EDE6; }
   .level-opt .tag{ font-size: 12px; font-weight: 700; color: var(--support); }
   .level-opt .name{ font-size: 14px; font-weight: 700; margin-top: 4px; }
   .level-opt .desc{ font-size: 12px; color: var(--ink-soft); margin-top: 3px; }
@@ -30,13 +30,13 @@
     font-size: 14px; font-weight: 700; color: var(--ink-soft); cursor: pointer; display: block;
   }
   .yn-opt input{ display: none; }
-  .yn-opt.active-yes{ border-color: var(--danger); background: var(--danger-soft); color: #6A2A18; }
-  .yn-opt.active-no{ border-color: var(--support); background: #E1EADB; color: #3D5433; }
+  .yn-opt.active-yes{ border-color: var(--danger); background: var(--danger-soft); color: #7A2626; }
+  .yn-opt.active-no{ border-color: var(--support); background: #E3EDE6; color: #2C4D3A; }
   .justificativa{ display: none; }
   .justificativa.show{ display: block; }
   .flag-note{
     margin-top: 14px; padding: 12px 14px; background: var(--danger-soft); border-left: 3px solid var(--danger);
-    border-radius: 2px; font-size: 13px; color: #6A2A18; display: none;
+    border-radius: 2px; font-size: 13px; color: #7A2626; display: none;
   }
   .flag-note.show{ display: block; }
   .form-actions{ margin-top: 8px; display: flex; gap: 12px; }

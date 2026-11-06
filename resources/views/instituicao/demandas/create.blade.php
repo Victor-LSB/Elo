@@ -13,7 +13,7 @@
   .level-pick{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 6px; }
   .level-opt{ border: 1.5px solid var(--border); border-radius: 3px; padding: 12px 10px; cursor: pointer; display: block; }
   .level-opt input{ display: none; }
-  .level-opt.active{ border-color: var(--support); background: #E1EADB; }
+  .level-opt.active{ border-color: var(--support); background: #E3EDE6; }
   .level-opt .tag{ font-size: 12px; font-weight: 700; color: var(--support); }
   .level-opt .name{ font-size: 14px; font-weight: 700; margin-top: 4px; }
   .level-opt .desc{ font-size: 12px; color: var(--ink-soft); margin-top: 3px; }

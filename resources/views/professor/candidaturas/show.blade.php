@@ -33,10 +33,10 @@
   .resolved-badge{ font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 3px; }
 
   .milestones-box{ margin-top: 16px; padding: 16px; border: 1.5px dashed var(--border); border-radius: 3px; }
-  .milestones-box h4{ font-size: 13.5px; margin: 0 0 4px; font-family: 'Atkinson Hyperlegible', sans-serif; }
+  .milestones-box h4{ font-size: 13.5px; margin: 0 0 4px; font-family: 'Source Sans 3', sans-serif; }
   .milestone-linha{ display: grid; grid-template-columns: 2fr 0.7fr 1fr; gap: 8px; margin-top: 10px; }
   .milestone-linha input{
-    padding: 9px 11px; font-size: 13.5px; font-family: 'Atkinson Hyperlegible', sans-serif;
+    padding: 9px 11px; font-size: 13.5px; font-family: 'Source Sans 3', sans-serif;
     border: 1.5px solid var(--border); border-radius: 3px; background: var(--bg); color: var(--ink); width: 100%;
   }
   .empty{ text-align: center; padding: 40px 20px; color: var(--ink-soft); font-size: 14.5px; }
@@ -100,11 +100,11 @@
             <button type="submit" class="btn btn-reject">Rejeitar</button>
           </form>
         @elseif ($candidatura->status === 'aprovada')
-          <span class="resolved-badge" style="background:#E1EADB;color:#3D5433;">Aprovado — demanda em execução</span>
+          <span class="resolved-badge" style="background:#E3EDE6;color:#2C4D3A;">Aprovado — demanda em execução</span>
         @elseif ($candidatura->status === 'rejeitada_automatica')
-          <span class="resolved-badge" style="background:var(--danger-soft);color:#6A2A18;">Rejeitado automaticamente</span>
+          <span class="resolved-badge" style="background:var(--danger-soft);color:#7A2626;">Rejeitado automaticamente</span>
         @else
-          <span class="resolved-badge" style="background:var(--danger-soft);color:#6A2A18;">Rejeitado</span>
+          <span class="resolved-badge" style="background:var(--danger-soft);color:#7A2626;">Rejeitado</span>
         @endif
       </div>
     </div>

@@ -11,7 +11,7 @@
   .content{ max-width: 860px; }
   .filter-bar{ display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
   .filter-bar select, .filter-bar input{
-    padding: 9px 12px; font-size: 14px; font-family: 'Atkinson Hyperlegible', sans-serif;
+    padding: 9px 12px; font-size: 14px; font-family: 'Source Sans 3', sans-serif;
     border: 1.5px solid var(--border); border-radius: 3px; background: var(--bg); color: var(--ink);
   }
   .filter-bar input{ flex: 1; min-width: 200px; }
@@ -26,11 +26,11 @@
     font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
     padding: 3px 9px; border-radius: 10px; background: var(--surface-alt); color: var(--ink-soft); flex-shrink: 0;
   }
-  .papel-tag.estudante{ background: #E4EEEC; color: var(--primary-dark); }
-  .papel-tag.professor{ background: #E1EADB; color: #3D5433; }
-  .papel-tag.instituicao{ background: var(--accent-soft); color: #6A3E0F; }
-  .papel-tag.coordenacao{ background: #E4EEEC; color: var(--primary-dark); }
-  .papel-tag.admin{ background: var(--danger-soft); color: #6A2A18; }
+  .papel-tag.estudante{ background: #E3EAF3; color: var(--primary-dark); }
+  .papel-tag.professor{ background: #E3EDE6; color: #2C4D3A; }
+  .papel-tag.instituicao{ background: var(--accent-soft); color: #1D3557; }
+  .papel-tag.coordenacao{ background: #E3EAF3; color: var(--primary-dark); }
+  .papel-tag.admin{ background: var(--danger-soft); color: #7A2626; }
   .empty{ text-align: center; padding: 40px 20px; color: var(--ink-soft); font-size: 14.5px; }
 
   @media (max-width: 760px){

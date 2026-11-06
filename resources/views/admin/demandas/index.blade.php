@@ -11,7 +11,7 @@
   .content{ max-width: 860px; }
   .filter-bar{ display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
   .filter-bar select{
-    padding: 9px 12px; font-size: 14px; font-family: 'Atkinson Hyperlegible', sans-serif;
+    padding: 9px 12px; font-size: 14px; font-family: 'Source Sans 3', sans-serif;
     border: 1.5px solid var(--border); border-radius: 3px; background: var(--bg); color: var(--ink);
   }
   .demand-card{

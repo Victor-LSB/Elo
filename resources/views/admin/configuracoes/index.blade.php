@@ -14,7 +14,7 @@
   .setting-label{ font-size: 14.5px; font-weight: 700; color: var(--ink); }
   .setting-desc{ font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; max-width: 380px; }
   .setting-input input{
-    padding: 8px 12px; font-size: 14px; font-family: 'Atkinson Hyperlegible', sans-serif;
+    padding: 8px 12px; font-size: 14px; font-family: 'Source Sans 3', sans-serif;
     border: 1.5px solid var(--border); border-radius: 3px; background: var(--bg); color: var(--ink);
     width: 120px; text-align: right;
   }
@@ -24,7 +24,7 @@
     font-size: 13.5px; font-weight: 700; color: var(--ink-soft); cursor: pointer; display: block;
   }
   .role-toggle-opt input{ display: none; }
-  .role-toggle-opt.active{ border-color: var(--primary); background: #E4EEEC; color: var(--primary); }
+  .role-toggle-opt.active{ border-color: var(--primary); background: #E3EAF3; color: var(--primary); }
   .user-row{ display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
   .user-row:last-child{ border-bottom: none; }
   .user-row .name{ font-weight: 700; color: var(--ink); }

@@ -13,10 +13,25 @@ class MilestoneController extends Controller
     {
         $milestones = Milestone::whereHas('demanda', fn ($q) => $q->where('professor_id', $request->user()->id))
             ->with('demanda.instituicao', 'validacao')
-            ->orderBy('prazo')
+            ->orderBy('ordem')
             ->get();
 
-        return view('professor.milestones.index', ['milestones' => $milestones]);
+        // Agrupa por demanda; as que têm milestone esperando o professor aparecem primeiro.
+        $grupos = $milestones->groupBy('demanda_id')
+            ->map(fn ($itens) => [
+                'demanda' => $itens->first()->demanda,
+                'milestones' => $itens->values(),
+                'concluidos' => $itens->where('status', 'concluido')->count(),
+                'aguardando' => $itens->filter(fn ($m) => $m->status === 'aguardando_validacao' && ! $m->validacao?->professor_aprovou)->count(),
+                'em_risco' => $itens->where('status', 'em_risco')->count(),
+            ])
+            ->sortBy([
+                fn ($a, $b) => $b['aguardando'] <=> $a['aguardando'],
+                fn ($a, $b) => strcmp($a['demanda']->titulo, $b['demanda']->titulo),
+            ])
+            ->values();
+
+        return view('professor.milestones.index', ['grupos' => $grupos]);
     }
 
     /** Professor aprova a entrega de um milestone (lado da dupla validação — RF-05.3). */

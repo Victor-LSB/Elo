@@ -11,7 +11,7 @@
     border: 1px solid var(--border); border-radius: var(--radius-card); padding: 44px 36px;
   }
   .mark{
-    width: 56px; height: 56px; border-radius: 50%; background: #E4EEEC; color: var(--support);
+    width: 56px; height: 56px; border-radius: 50%; background: #E3EAF3; color: var(--support);
     display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
     font-size: 26px; font-weight: 700;
   }

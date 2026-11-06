@@ -74,11 +74,11 @@
         <div class="candidatura-top">
           <h3>Grupo "{{ $candidatura->grupo->nome }}"</h3>
           @if ($candidatura->status === 'aprovada')
-            <span class="resolved-badge" style="background:#E1EADB;color:#3D5433;">Aprovado</span>
+            <span class="resolved-badge" style="background:#E3EDE6;color:#2C4D3A;">Aprovado</span>
           @elseif ($candidatura->status === 'rejeitada_automatica')
-            <span class="resolved-badge" style="background:var(--danger-soft);color:#6A2A18;">Rejeitado automaticamente</span>
+            <span class="resolved-badge" style="background:var(--danger-soft);color:#7A2626;">Rejeitado automaticamente</span>
           @else
-            <span class="resolved-badge" style="background:var(--danger-soft);color:#6A2A18;">Rejeitado</span>
+            <span class="resolved-badge" style="background:var(--danger-soft);color:#7A2626;">Rejeitado</span>
           @endif
         </div>
         <div class="demand-tag">{{ $candidatura->demanda->titulo }} · {{ $candidatura->demanda->instituicao->nome }}</div>

@@ -15,7 +15,7 @@
   .meta-item .v{ margin-top: 3px; font-size: 14.5px; color: var(--ink); }
   .blocked-note{
     padding: 16px 18px; background: var(--accent-soft); border-left: 3px solid var(--accent);
-    border-radius: 2px; font-size: 14px; color: #6A3E0F;
+    border-radius: 2px; font-size: 14px; color: #1D3557;
   }
   @media (max-width: 760px){ .meta-grid{ grid-template-columns: 1fr; } }
 </style>
@@ -45,7 +45,7 @@
     @if (! $grupo)
       <div class="blocked-note">
         Você precisa estar em um grupo para se candidatar.
-        <a href="{{ route('estudante.grupo.show') }}" style="color:#6A3E0F;text-decoration:underline;font-weight:700;">Criar ou entrar em um grupo</a>.
+        <a href="{{ route('estudante.grupo.show') }}" style="color:#1D3557;text-decoration:underline;font-weight:700;">Criar ou entrar em um grupo</a>.
       </div>
     @elseif ($bloqueado)
       <div class="blocked-note">

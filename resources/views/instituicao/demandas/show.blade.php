@@ -30,7 +30,7 @@
   .group-list{ display: flex; flex-direction: column; gap: 10px; }
   .group-member{ display: flex; align-items: center; gap: 10px; font-size: 14px; }
   .avatar{
-    width: 30px; height: 30px; border-radius: 50%; background: #E4EEEC; color: var(--primary-dark);
+    width: 30px; height: 30px; border-radius: 50%; background: #E3EAF3; color: var(--primary-dark);
     display: flex; align-items: center; justify-content: center; font-size: 12.5px; font-weight: 700; flex-shrink: 0;
   }
   .empty-inline{ font-size: 13.5px; color: var(--ink-soft); }

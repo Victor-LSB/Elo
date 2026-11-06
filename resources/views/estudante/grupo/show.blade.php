@@ -13,7 +13,7 @@
   .group-list{ display: flex; flex-direction: column; gap: 12px; margin-top: 18px; }
   .group-member{ display: flex; align-items: center; gap: 12px; }
   .avatar{
-    width: 36px; height: 36px; border-radius: 50%; background: #E4EEEC; color: var(--primary-dark);
+    width: 36px; height: 36px; border-radius: 50%; background: #E3EAF3; color: var(--primary-dark);
     display: flex; align-items: center; justify-content: center; font-size: 13.5px; font-weight: 700; flex-shrink: 0;
   }
   .member-info .name{ font-size: 14.5px; font-weight: 700; color: var(--ink); }
@@ -21,7 +21,7 @@
   .member-tag{ margin-left: auto; font-size: 12px; font-weight: 700; color: var(--support); }
   .invite-row{ margin-top: 20px; display: flex; gap: 10px; }
   .invite-row input{
-    flex: 1; padding: 10px 13px; font-size: 14.5px; font-family: 'Atkinson Hyperlegible', sans-serif;
+    flex: 1; padding: 10px 13px; font-size: 14.5px; font-family: 'Source Sans 3', sans-serif;
     border: 1.5px solid var(--border); border-radius: 3px; background: var(--bg); color: var(--ink);
   }
   .invite-row input:focus{ outline: none; border-color: var(--primary); background: var(--surface); }

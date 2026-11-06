@@ -14,7 +14,7 @@
     padding: 7px 15px; border: 1.5px solid var(--border); border-radius: 20px;
     font-size: 13.5px; font-weight: 700; color: var(--ink-soft);
   }
-  .filter-chip.active{ border-color: var(--primary); background: #E4EEEC; color: var(--primary); }
+  .filter-chip.active{ border-color: var(--primary); background: #E3EAF3; color: var(--primary); }
 
   .demand-list{ display: flex; flex-direction: column; gap: 14px; }
   .demand-card{

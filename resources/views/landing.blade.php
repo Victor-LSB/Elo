@@ -6,22 +6,15 @@
 <title>Elo — Extensão universitária que chega ao bairro</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #EEEBE1;
-    --surface: #FFFFFF;
-    --surface-alt: #E4E0D2;
-    --ink: #1C2624;
-    --ink-soft: #4C5652;
-    --primary: #24474A;
-    --primary-dark: #163030;
-    --accent: #C97E2A;
-    --accent-soft: #EAD3AC;
-    --support: #6E8F63;
-    --border: #D6D0BE;
-    --radius-card: 4px;
-    --max: 1120px;
+    --bg: #F3F4F6; --surface: #FFFFFF; --surface-alt: #E9ECF0;
+    --ink: #1B2330; --ink-soft: #505A69;
+    --primary: #1D3557; --primary-dark: #14263F;
+    --accent: #1D4E89; --accent-soft: #E3EAF3; --gold: #A8833A; --support: #3F6B52;
+    --danger: #A33A3A; --danger-soft: #F6E6E6;
+    --border: #D3D8DF; --radius-card: 2px; --max: 1120px;
   }
 
   *{ box-sizing: border-box; }
@@ -31,7 +24,7 @@
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-family: 'Source Sans 3', Arial, sans-serif;
     font-size: 17px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
@@ -68,7 +61,7 @@
     align-items: center;
     justify-content: center;
     padding: 13px 24px;
-    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
@@ -79,9 +72,9 @@
   }
   .btn-primary{
     background: var(--accent);
-    color: #24140A;
+    color: #FFFFFF;
   }
-  .btn-primary:hover{ background: #B36F22; }
+  .btn-primary:hover{ background: #163F70; }
   .btn-outline{
     background: transparent;
     border-color: var(--primary);
@@ -89,18 +82,18 @@
   }
   .btn-outline:hover{ background: var(--primary); color: #fff; }
   .btn-inverse{
-    background: var(--accent);
-    color: #24140A;
+    background: #fff;
+    color: var(--primary-dark);
   }
-  .btn-inverse:hover{ background: #DB8F3E; }
+  .btn-inverse:hover{ background: #E3EAF3; }
 
   /* ---------- Header ---------- */
   header{
     position: sticky;
     top: 0;
     z-index: 40;
-    background: rgba(238,235,225,0.92);
-    backdrop-filter: blur(6px);
+    background: var(--surface);
+    border-top: 4px solid var(--primary-dark);
     border-bottom: 1px solid var(--border);
   }
   .nav{
@@ -131,7 +124,7 @@
     font-size: 15px;
     font-weight: 700;
   }
-  .nav-links a:hover{ color: var(--accent); }
+  ..nav-links a:hover{ color: var(--accent); }
   .nav-cta{ display: flex; align-items: center; gap: 14px; }
   .nav-enter{
     font-size: 15px;
@@ -160,7 +153,9 @@
 
   /* ---------- Hero ---------- */
   .hero{
-    padding: 84px 0 96px;
+    padding: 80px 0 88px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
   }
   .hero-grid{
     display: grid;
@@ -190,14 +185,14 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-card);
     padding: 22px 22px 20px;
-    box-shadow: 0 1px 0 var(--border);
+    border-top: 3px solid var(--primary);
   }
   .hero-card-tag{
     display: inline-block;
     font-size: 13px;
     font-weight: 700;
     color: var(--primary);
-    background: #E4EEEC;
+    background: #E3EAF3;
     padding: 3px 10px;
     border-radius: 3px;
     margin-bottom: 14px;
@@ -225,12 +220,7 @@
     gap: 8px;
     align-items: flex-start;
   }
-  .dot-live{
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--support);
-    margin-top: 6px;
-    flex-shrink: 0;
-  }
+  .dot-live{ width: 8px; height: 8px; background: var(--support); margin-top: 6px; flex-shrink: 0; }
 
   /* ---------- Bridge divider ---------- */
   .bridge-divider{
@@ -270,7 +260,7 @@
     font-family: 'Source Serif 4', serif;
     font-size: 15px;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--gold);
     margin-bottom: 14px;
   }
   .step h3{
@@ -293,7 +283,7 @@
   }
   .role-mark{
     width: 38px; height: 38px;
-    border-radius: 3px;
+    border-radius: 2px;
     display: flex; align-items: center; justify-content: center;
     font-family: 'Source Serif 4', serif;
     font-weight: 700;
@@ -346,7 +336,7 @@
   .toggle-opt.active{
     border-color: var(--accent);
     background: var(--accent-soft);
-    color: #6A3E0F;
+    color: #1D3557;
   }
   .checklist-result{
     font-size: 14px;
@@ -380,7 +370,7 @@
 
   /* ---------- CTA final ---------- */
   .cta-band{
-    background: var(--primary-dark);
+    background: var(--primary);
     color: #fff;
   }
   .cta-inner{
@@ -392,7 +382,7 @@
     font-size: clamp(26px, 3vw, 34px);
   }
   .cta-band p{
-    color: #C9D6D2;
+    color: #C5D0DF;
     margin-top: 14px;
     font-size: 16.5px;
   }
@@ -400,8 +390,9 @@
 
   /* ---------- Footer ---------- */
   footer{
-    background: var(--bg);
-    border-top: 1px solid var(--border);
+    background: var(--primary-dark);
+    color: #C5D0DF;
+    border-top: 4px solid var(--gold);
     padding: 56px 0 32px;
   }
   .footer-grid{
@@ -409,48 +400,32 @@
     grid-template-columns: 1.3fr 1fr 1fr;
     gap: 40px;
   }
-  .footer-brand .logo{ display: inline-block; margin-bottom: 12px; }
-  .footer-brand p{ font-size: 14.5px; max-width: 34ch; }
+  .footer-brand .logo{ display: inline-block; margin-bottom: 12px; color: #fff; }
+  .footer-brand p{ font-size: 14.5px; max-width: 34ch; color: #C5D0DF; }
   .footer-col h4{
     font-size: 14px;
     font-weight: 700;
-    color: var(--ink);
+    color: #fff;
     margin-bottom: 14px;
   }
   .footer-col ul{ list-style: none; margin: 0; padding: 0; }
   .footer-col li{ margin-bottom: 10px; }
   .footer-col a{
     font-size: 14.5px;
-    color: var(--ink-soft);
+    color: #C5D0DF;
     text-decoration: none;
   }
-  .footer-col a:hover{ color: var(--accent); }
+  .footer-col a:hover{ color: #fff; }
   .footer-bottom{
     margin-top: 48px;
     padding-top: 20px;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(255,255,255,0.16);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
     font-size: 13px;
-    color: var(--ink-soft);
-  }
-
-  /* ---------- Motion ---------- */
-  @media (prefers-reduced-motion: no-preference){
-    .hero h1, .hero .lede, .hero-actions, .hero-card{
-      opacity: 0;
-      animation: rise 0.7s ease forwards;
-    }
-    .hero h1{ animation-delay: 0.05s; }
-    .hero .lede{ animation-delay: 0.18s; }
-    .hero-actions{ animation-delay: 0.30s; }
-    .hero-card{ animation-delay: 0.22s; }
-    @keyframes rise{
-      from{ opacity: 0; transform: translateY(10px); }
-      to{ opacity: 1; transform: translateY(0); }
-    }
+    color: #9FB0C6;
   }
 
   /* ---------- Responsive ---------- */
@@ -531,12 +506,6 @@
     </div>
   </section>
 
-  <svg class="bridge-divider" viewBox="0 0 1200 64" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 40 C 200 10, 300 10, 400 40 S 700 10, 800 40 S 1100 10, 1200 40" fill="none" stroke="#C97E2A" stroke-width="2"/>
-    <circle cx="400" cy="40" r="4" fill="#24474A"/>
-    <circle cx="800" cy="40" r="4" fill="#24474A"/>
-  </svg>
-
   <section id="como-funciona">
     <div class="wrap">
       <div class="section-head">
@@ -606,7 +575,7 @@
           <p>Forma grupo, se candidata, executa a demanda e acumula horas complementares.</p>
         </div>
         <div class="role-card">
-          <div class="role-mark" style="background:#7A6A4F">A</div>
+          <div class="role-mark" style="background:#4A5568">A</div>
           <h3>Admin</h3>
           <p>Configura o sistema e resolve exceções — reabertura de demandas, disputas.</p>
         </div>

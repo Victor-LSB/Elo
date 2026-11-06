@@ -14,20 +14,20 @@
   .tl-item:last-child{ border-bottom: none; }
   .tl-date{ flex-shrink: 0; width: 64px; color: var(--ink-soft); font-weight: 700; }
   .tl-text{ color: var(--ink); }
-  .tl-item.risk .tl-text{ color: #6A2A18; }
+  .tl-item.risk .tl-text{ color: #7A2626; }
 
   .hours-box{
-    margin-top: 18px; padding: 14px 16px; background: #E1EADB; border-radius: 3px;
+    margin-top: 18px; padding: 14px 16px; background: #E3EDE6; border-radius: 3px;
     display: flex; align-items: center; justify-content: space-between; font-size: 14px; gap: 12px;
   }
-  .hours-box .num{ font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 700; color: #3D5433; }
+  .hours-box .num{ font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 700; color: #2C4D3A; }
 
   .radio-pick{ display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
   .radio-opt{
     border: 1.5px solid var(--border); border-radius: 3px; padding: 14px 16px; cursor: pointer;
     display: flex; gap: 12px; align-items: flex-start;
   }
-  .radio-opt.active{ border-color: var(--primary); background: #E4EEEC; }
+  .radio-opt.active{ border-color: var(--primary); background: #E3EAF3; }
   .radio-opt input{ margin-top: 3px; accent-color: var(--primary); }
   .radio-opt .opt-title{ font-size: 14.5px; font-weight: 700; color: var(--ink); }
   .radio-opt .opt-desc{ font-size: 13px; color: var(--ink-soft); margin-top: 3px; }

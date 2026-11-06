@@ -17,17 +17,17 @@
   .group-banner a{ font-weight: 700; color: var(--accent); flex-shrink: 0; }
   .group-banner a:hover{ text-decoration: underline; }
   .group-banner.locked{ background: var(--accent-soft); border-color: var(--accent); }
-  .group-banner.locked b{ color: #6A3E0F; }
+  .group-banner.locked b{ color: #1D3557; }
 
   .filters{ display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
   .filter-chip{
     padding: 7px 15px; border: 1.5px solid var(--border); border-radius: 20px;
     font-size: 13.5px; font-weight: 700; color: var(--ink-soft);
   }
-  .filter-chip.active{ border-color: var(--primary); background: #E4EEEC; color: var(--primary); }
+  .filter-chip.active{ border-color: var(--primary); background: #E3EAF3; color: var(--primary); }
   .filter-form{ margin-bottom: 22px; display: flex; gap: 10px; flex-wrap: wrap; }
   .filter-form select{
-    padding: 8px 12px; font-size: 13.5px; font-family: 'Atkinson Hyperlegible', sans-serif;
+    padding: 8px 12px; font-size: 13.5px; font-family: 'Source Sans 3', sans-serif;
     border: 1.5px solid var(--border); border-radius: 3px; background: var(--surface); color: var(--ink-soft);
   }
 

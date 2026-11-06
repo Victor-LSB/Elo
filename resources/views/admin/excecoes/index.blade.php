@@ -12,7 +12,7 @@
   .stat-card{ padding: 16px 18px; }
   .stat-card .num{ font-size: 26px; }
   .stat-card.alert{ border-color: var(--danger); background: var(--danger-soft); }
-  .stat-card.alert .num{ color: #6A2A18; }
+  .stat-card.alert .num{ color: #7A2626; }
   .stat-card .label{ font-size: 12.5px; }
 
   .exc-list{ display: flex; flex-direction: column; gap: 14px; }
